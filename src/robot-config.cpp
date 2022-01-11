@@ -25,7 +25,6 @@ motor liftR(PORT8, ratio36_1, false);
 motor_group lift(liftL, liftR);
 
 //Pneumatic
-//digital_out clampPart = digital_out(Brain.ThreeWirePort.A);
 digital_out latchDown = digital_out(Brain.ThreeWirePort.A);
 
 void vexcodeInit(void) {

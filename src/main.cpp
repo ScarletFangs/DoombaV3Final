@@ -13,11 +13,11 @@
 #include "vex.h"
 #include "robot-config.h"
 #include "driving-functions.h"
+#include "autonomous-functions.h"
+#include "routine.h"
 
 using namespace vex;
 competition Competition;
-
-//testing Git
 
 void userControl(){
   while(1){
@@ -27,6 +27,7 @@ void userControl(){
   }
 }
 void Autonomous(){
+  goalside();
 }
 
 int main() {

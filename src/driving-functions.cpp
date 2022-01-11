@@ -7,45 +7,33 @@ void tankDrive(){
     leftWheels.spin(reverse, controller1.Axis3.value()*1.5, pct);
     rightWheels.spin(fwd, controller1.Axis2.value()*1.5,pct);
   }else{
-    leftWheels.stop(coast);
-    rightWheels.stop(coast);
+    leftWheels.stop(hold);
+    rightWheels.stop(hold);
   }
 }
 
 void arcadeDrive(){
   if(abs(controller1.Axis3.value())>5||abs(controller1.Axis1.value())){
-    leftWheels.spin(reverse,controller1.Axis3.value()*1.85+controller1.Axis1.value(),pct);
-    rightWheels.spin(fwd, controller1.Axis3.value()*1.85-controller1.Axis1.value(),pct);
+    leftWheels.spin(reverse,controller1.Axis3.value()*1.85+controller1.Axis1.value()*0.7,pct);
+    rightWheels.spin(fwd, controller1.Axis3.value()*1.85-controller1.Axis1.value()*0.7,pct);
   }else{
-    leftWheels.stop(coast);
-    rightWheels.stop(coast);
+    leftWheels.stop(hold);
+    rightWheels.stop(hold);
   }
 }
 
 //4 Bar
 void liftControl(){
-  if(controller1.ButtonL1.pressing()){
-    //lift.spin(fwd);
+  if(controller1.ButtonR1.pressing()){
     lift.spin(fwd, 35.0, pct);
-  }else if(controller1.ButtonL2.pressing()){
-    //lift.spin(reverse);
+  }else if(controller1.ButtonR2.pressing()){
     lift.spin(reverse, 25.0, pct);
   }else{
     lift.stop(hold);
   }
 }
 
-/*
-void liftToggle(){
-  if(controller1.ButtonA.pressing()){
-    latchDown.set(1);
-    printf("pressing\n");
-  }else{
-    latchDown.set(0);                                         
-    printf("not\n");
-  }
-}*/
-
+//Latch
 bool toggle = false;
 bool stopper = false;
 void liftToggle(){
