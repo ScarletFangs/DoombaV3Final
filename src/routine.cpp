@@ -34,8 +34,18 @@ void aimatCorner(){
   latchDown.set(0);
   moveForward(-40, 30, 10);
 
+//NATE'S EDIT STARTS HERE
   //position for ramp
-  turnClockwise(-25, 30, 10);
+  turnClockwise(-30, 30, 10);
   moveForward(25, 20, 10);
-  turnClockwise(-15, 30, 10);
+  turnClockwise(-30, 30, 10); 
+  moveForward(35, 20, 10);
+  //turnClockwise(-15, 25, 10);
+ // moveForward(20,15,10);
+
+
+
+
+
+
 }
