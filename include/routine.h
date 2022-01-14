@@ -3,7 +3,7 @@
 #define ROUTINE
 
 //Routines-----------------
-void goalside();
+void aimatCorner();
 
 
 

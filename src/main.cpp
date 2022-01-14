@@ -27,13 +27,13 @@ void userControl(){
   }
 }
 void Autonomous(){
-  goalside();
+  aimatCorner();
 }
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-
+  
   Competition.drivercontrol(userControl);
   Competition.autonomous(Autonomous);
   

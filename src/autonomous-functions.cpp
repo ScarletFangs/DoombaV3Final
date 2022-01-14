@@ -49,19 +49,11 @@ void turnClockwise(float degree, int speedPCT, int timeSec){
   setMotorTimeout(0);
 }
 
-//Pneumatic
-bool ptoggle = false;
-//bool pstopper = false;
-void pneumatic(){
-  if(ptoggle){
-    latchDown.set(0);
-    ptoggle = !ptoggle;
-  }else{
-    latchDown.set(1);
-    ptoggle = !ptoggle;
-    printf("ptoggle: ");
-  }
+//Move lift
+void liftAuton(float degree, int speedPCT, int timeSec){
+  setMotorTimeout(timeSec);
 
+  lift.rotateFor(directionType::fwd, double (degree/31.9), rotationUnits::rev, double (speedPCT), velocityUnits::pct,false);
 
-  
+  setMotorTimeout(0);
 }

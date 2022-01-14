@@ -15,8 +15,8 @@ void flexMvmtL(float, float, int, int);
 //Turn Clockwise
 void turnClockwise(float degree, int speedPCT, int timeSec);
 
-//Pneumatic
-void pneumatic();
+//Move lift
+void liftAuton(float, int, int);
 
 
 #endif
