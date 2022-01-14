@@ -10,8 +10,8 @@ using namespace std;
 //Grab side yellow goal in front
 //Alignment(goalside):
 //NOT STARTING IN CORNER SQUARE
-//front left tip wheel on top edge of starting square
-//back right corner aligned on right side of square
+//line left/right with stick, top right small wheel touch
+//angle left a little according to goal in front
 //Alignment(rampside):
 //NOT STARTING IN CORNER SQUARE
 //front left tip wheel on corner that touches 4 squares
@@ -20,7 +20,7 @@ void aimatCorner(){
   latchDown.set(1);           //open
   moveForward(120, 55, 10);
   latchDown.set(0);
-  moveForward(-130, 55, 10);
+  moveForward(-110, 55, 10);
 
   //dropping yellow goal
   turnClockwise(30, 50, 10);
@@ -37,15 +37,11 @@ void aimatCorner(){
 //NATE'S EDIT STARTS HERE
   //position for ramp
   turnClockwise(-30, 30, 10);
-  moveForward(25, 20, 10);
-  turnClockwise(-30, 30, 10); 
   moveForward(35, 20, 10);
-  //turnClockwise(-15, 25, 10);
- // moveForward(20,15,10);
-
-
-
-
-
-
+  turnClockwise(-20, 30, 10); 
+  moveForward(15, 20, 10);
+ //BELOW ARE THE OUTLINE OF THE NEXT STEPS
+ //lift hinge
+ //move forward just a lil bit (distance: 3 or 5)
+ //detach th clamp (release goal)
 }
