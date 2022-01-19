@@ -1,3 +1,5 @@
+//nate is editing the main ruotine. this file is for reference of the original routine
+
 #include "vex.h"
 #include "routine.h"
 #include "autonomous-functions.h"
@@ -20,36 +22,33 @@ void aimatCorner(){
   latchDown.set(1);           //open
   moveForward(120, 55, 10);
   latchDown.set(0);
-  moveForward(-80, 55, 10);
+  moveForward(-110, 55, 10);
 
   //dropping yellow goal
-  turnClockwise(-40, 20, 10);
+  turnClockwise(30, 50, 10);
   moveForward(20, 20, 10);
   latchDown.set(1);
   moveForward(-40, 30, 10);
 
   //grabbing red
-  turnClockwise(-13, 20, 10);
+  turnClockwise(-13, 15, 10);
   moveForward(50, 25, 10);
   latchDown.set(0);
   moveForward(-40, 30, 10);
 
 //NATE'S EDIT STARTS HERE
   //position for ramp
-  turnClockwise(-50, 20, 10);
-  moveForward(45, 20, 10);
-  turnClockwise(-16, 20, 10); 
-  liftAuton(90, 10, 10);
-  moveForward(24, 20, 10);
-
-
+  turnClockwise(-30, 30, 10);
+  moveForward(35, 20, 10);
+  turnClockwise(-20, 30, 10); 
+  moveForward(15, 20, 10);
  //BELOW ARE THE OUTLINE OF THE NEXT STEPS
  //lift hinge
-  
+  turnClockwise(13, 20, 5);
  //move forward just a lil bit (distance: 3 or 5)
- // moveForward(5, 20, 10);
+  moveForward(5, 20, 10);
  //detach th clamp (release goal)
-  //latchDown.set(1);
+  latchDown.set(1);
   //move back
   moveForward(-10, 20, 10);
 
