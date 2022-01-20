@@ -23,24 +23,28 @@ void aimatCorner(){
   moveForward(-80, 55, 10);
 
   //dropping yellow goal
-  turnClockwise(-40, 20, 10);
+  turnClockwise(-37, 20, 10);
   moveForward(20, 20, 10);
   latchDown.set(1);
   moveForward(-40, 30, 10);
 
   //grabbing red
-  turnClockwise(-13, 20, 10);
+  turnClockwise(-12, 20, 10);
   moveForward(50, 25, 10);
   latchDown.set(0);
-  moveForward(-40, 30, 10);
+  moveForward(-75, 30, 10);
 
 //NATE'S EDIT STARTS HERE
   //position for ramp
-  turnClockwise(-50, 20, 10);
-  moveForward(45, 20, 10);
-  turnClockwise(-16, 20, 10); 
-  liftAuton(90, 10, 10);
-  moveForward(24, 20, 10);
+  turnClockwise(-47, 20, 10);
+  liftAuton(120, 10, 10);
+  moveForward(50, 20, 10);
+  turnClockwise(-13, 15, 10); 
+  moveForward(30, 20, 10);
+  latchDown.set(1);
+  moveForward(-40, 20, 10);
+  turnClockwise(35, 20, 10);
+  //moveForward(20, 7, 10);
 
 
  //BELOW ARE THE OUTLINE OF THE NEXT STEPS
@@ -51,6 +55,6 @@ void aimatCorner(){
  //detach th clamp (release goal)
   //latchDown.set(1);
   //move back
-  moveForward(-10, 20, 10);
+  //moveForward(-10, 20, 10);
 
 }
