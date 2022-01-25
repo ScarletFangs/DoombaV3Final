@@ -22,6 +22,7 @@ competition Competition;
 void userControl(){
   while(1){
     arcadeDrive();
+    //tankDrive();
     liftControl();
     liftToggle();
   }

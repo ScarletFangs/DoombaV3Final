@@ -18,30 +18,40 @@ using namespace std;
 void aimatCorner(){
   liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
-  moveForward(120, 55, 10);
+  moveForward(105, 55, 10);     
   latchDown.set(0);
-  moveForward(-110, 55, 10);
+  moveForward(-80, 55, 10);
 
   //dropping yellow goal
-  turnClockwise(30, 50, 10);
+  turnClockwise(-40, 20, 10);     //turns left
   moveForward(20, 20, 10);
   latchDown.set(1);
   moveForward(-40, 30, 10);
 
-  //grabbing red
-  turnClockwise(-13, 15, 10);
-  moveForward(50, 25, 10);
+  //grabbing personal
+  turnClockwise(-14, 20, 10);     
+  moveForward(36, 25, 10);
   latchDown.set(0);
-  moveForward(-40, 30, 10);
+  moveForward(-75, 30, 10);
 
-//NATE'S EDIT STARTS HERE
-  //position for ramp
-  turnClockwise(-30, 30, 10);
-  moveForward(35, 20, 10);
-  turnClockwise(-20, 30, 10); 
-  moveForward(15, 20, 10);
- //BELOW ARE THE OUTLINE OF THE NEXT STEPS
- //lift hinge
- //move forward just a lil bit (distance: 3 or 5)
- //detach th clamp (release goal)
+  //position for ramp, moving and lifting lift
+  turnClockwise(-46, 20, 10);     
+  liftAuton(120, 50, 10);       
+  moveForward(50, 20, 10);
+
+  //PLAN B FORCE IN
+  turnClockwise(-17.5, 15, 10);   //-18,15,10
+  moveForward(15, 10, 10);
+  latchDown.set(1);
+
+
+  // //PLAN A REGULAR ALIGN
+  // //turn into ramp and drop
+  // turnClockwise(-14, 15, 10);    //turning against ramp   
+  // moveForward(25, 20, 10);       //get closer to drop
+  // latchDown.set(1);
+
+  // //position for driver 
+  // moveForward(-20, 20, 10);      
+  // turnClockwise(35, 20, 10);
 }
