@@ -35,13 +35,13 @@ void aimatCorner(){
   moveForward(-75, 30, 10);
 
   //position for ramp, moving and lifting lift
-  turnClockwise(-46, 20, 10);     
-  liftAuton(120, 50, 10);       
-  moveForward(50, 20, 10);
+  turnClockwise(-46, 20, 5);     
+  liftAuton(120, 50, 5);       
+  moveForward(50, 20, 5);
 
   //PLAN B FORCE IN
-  turnClockwise(-17.5, 15, 10);   //-18,15,10
-  moveForward(15, 10, 10);
+  turnClockwise(-17.5, 15, 5);   //-18,15,10
+  moveForward(15, 10, 5);
   latchDown.set(1);
 
 
