@@ -28,9 +28,15 @@ void aimatCorner(){
   latchDown.set(1);
   moveForward(-40, 30, 10);
 
+<<<<<<< Updated upstream
   //grabbing red
   turnClockwise(-12, 20, 10);
   moveForward(50, 25, 10);
+=======
+  //grabbing personal
+  turnClockwise(-15, 20, 10);     
+  moveForward(36, 25, 10);
+>>>>>>> Stashed changes
   latchDown.set(0);
   moveForward(-75, 30, 10);
 
