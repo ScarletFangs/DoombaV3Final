@@ -19,10 +19,12 @@ motor_group leftWheels(left1, left2);
 motor_group rightWheels(right1, right2);
 
 //4 Bar motor
-motor liftL(PORT3, ratio36_1, true);
-motor liftR(PORT8, ratio36_1, false);
+motor liftL1(PORT3, ratio36_1, true);
+motor liftL2(PORT5, ratio36_1, true);
+motor liftR1(PORT8, ratio36_1, false);
+motor liftR2(PORT6, ratio36_1, false);
 
-motor_group lift(liftL, liftR);
+motor_group lift(liftL1, liftL2, liftR1, liftR2);
 
 //Pneumatic
 digital_out latchDown = digital_out(Brain.ThreeWirePort.A);
