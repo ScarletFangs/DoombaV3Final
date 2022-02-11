@@ -5,7 +5,9 @@
 //Routines-----------------
 void aimatCorner();
 
+void aimatCornerGPS();
 
+void rampSide();
 
 
 #endif

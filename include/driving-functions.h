@@ -3,6 +3,7 @@
 
 //Drive
 void tankDrive();
+void tankDriveToggle();
 void arcadeDrive();
 
 //4 Bar
