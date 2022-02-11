@@ -15,14 +15,13 @@
 #include "driving-functions.h"
 #include "autonomous-functions.h"
 #include "routine.h"
-<<<<<<< Updated upstream
-=======
 //-----NEW-----
 #include "customMenu.h"
 #include "GPS.h"
 #include "GPSRoutine.h"
 //-------------
->>>>>>> Stashed changes
+#include "routineRampSide.h"
+#include "autonSkills.h"
 
 using namespace vex;
 competition Competition;
@@ -67,18 +66,6 @@ void Autonomous(){
   notificationHUD("Auton: Done");
 }
 void userControl(){
-  Brain.Screen.clearScreen(green);
-  while(1){
-<<<<<<< Updated upstream
-    arcadeDrive();
-    //tankDrive();
-    liftControl();
-    liftToggle();
-  }
-}
-void Autonomous(){
-  aimatCorner();
-=======
     if(getValues(AUTON_DRIVE) == ARCADE){
       arcadeDrive();
       liftToggle();
@@ -93,7 +80,6 @@ void Autonomous(){
 void pre_auton (void){
   menuCONFIG();
   notificationHUD("Robot: OK");
->>>>>>> Stashed changes
 }
 
 
