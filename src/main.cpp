@@ -15,6 +15,8 @@
 #include "driving-functions.h"
 #include "autonomous-functions.h"
 #include "routine.h"
+#include "routineRampSide.h"
+#include "autonSkills.h"
 
 using namespace vex;
 competition Competition;
@@ -28,7 +30,10 @@ void userControl(){
   }
 }
 void Autonomous(){
+  //uncomment the routine we want to execute
   aimatCorner();
+  //rampSide();
+  //autonProgram();
 }
 
 int main() {

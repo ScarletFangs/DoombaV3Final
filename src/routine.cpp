@@ -16,42 +16,26 @@ using namespace std;
 //NOT STARTING IN CORNER SQUARE
 //front left tip wheel on corner that touches 4 squares
 void aimatCorner(){
-  liftAuton(0, 10, 10);     //push lift to bottom
+liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
-  moveForward(105, 55, 10);     
+  moveForward(100, 100, 10);     
   latchDown.set(0);
-  moveForward(-80, 55, 10);
+
+  //lift a little to not drag
+  liftAuton(0.5, 10, 10);
+  moveForward(-20, 55, 10);     //-45, 48,10
 
   //dropping yellow goal
-  turnClockwise(-40, 20, 10);     //turns left
-  moveForward(20, 20, 10);
-  latchDown.set(1);
-  moveForward(-40, 30, 10);
+  turnClockwise(-20, 20, 10);     //turns left  
+  moveForward(80, 50, 10);
+  turnClockwise(-20, 20, 10);     //turns left
+  liftAuton(240, 40, 5);
+  wait(1, sec);  
+  moveForward(60, 25, 10);
+  liftAuton(-2, 20, 5);
+  wait(1, sec);
 
-  //grabbing personal
-  turnClockwise(-14, 20, 10);     
-  moveForward(36, 25, 10);
-  latchDown.set(0);
-  moveForward(-75, 30, 10);
-
-  //position for ramp, moving and lifting lift
-  turnClockwise(-46, 20, 5);     
-  liftAuton(120, 50, 5);       
-  moveForward(50, 20, 5);
-
-  //PLAN B FORCE IN
-  turnClockwise(-17.5, 15, 5);   //-18,15,10
-  moveForward(15, 10, 5);
   latchDown.set(1);
 
 
-  // //PLAN A REGULAR ALIGN
-  // //turn into ramp and drop
-  // turnClockwise(-14, 15, 10);    //turning against ramp   
-  // moveForward(25, 20, 10);       //get closer to drop
-  // latchDown.set(1);
-
-  // //position for driver 
-  // moveForward(-20, 20, 10);      
-  // turnClockwise(35, 20, 10);
 }
