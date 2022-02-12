@@ -37,7 +37,7 @@ competition Competition;
 //   }
 // }
 // void Autonomous(){
-//   aimatCornerGPS();
+//   safeGoalSide();
 // }
 
 //---Menu---
@@ -53,7 +53,7 @@ void Autonomous(){
     Brain.Screen.print("LiftR1 temp: %f\n", liftR1.temperature());
     Brain.Screen.print("LiftR2 temp: %f\n", liftR2.temperature());
   if(getValues(AUTON_TYPE) == GOALSIDE){
-    aimatCorner();
+    safeGoalSide();
     printf("goal side auton");
   }else if(getValues(AUTON_TYPE) == RAMPSIDE){
     //rampSide();

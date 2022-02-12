@@ -3,9 +3,9 @@
 #define ROUTINE
 
 //Routines-----------------
-void aimatCorner();
-
 void aimatCornerGPS();
+
+void safeGoalSide();
 
 void rampSide();
 

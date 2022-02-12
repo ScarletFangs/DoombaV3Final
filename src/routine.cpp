@@ -8,53 +8,39 @@
 using namespace vex;
 using namespace std;
 
-//Grab side yellow goal in front
-//Alignment(goalside):
-//NOT STARTING IN CORNER SQUARE
-//line left/right with stick, top right small wheel touch
-//angle left a little according to goal in front
-//Alignment(rampside):
-//NOT STARTING IN CORNER SQUARE
-//front left tip wheel on corner that touches 4 squares
-void aimatCorner(){
+void safeGoalSide(){
   liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
-  moveForward(105, 55, 10);     
-  moveForward(100, 100, 10);     
+  moveForward(100, 100, 10); 
   latchDown.set(0);
-
-  //lift a little to not drag
   liftAuton(0.5, 10, 10);
-  moveForward(-20, 55, 10);     //-45, 48,10
-
-  //dropping yellow goal
-  turnClockwise(-20, 20, 10);     //turns left
-  moveForward(80, 50, 10);
-  turnClockwise(-20, 20, 10);     //turns left
-  liftAuton(240, 50, 5);
-  wait(1, sec);  
-  moveForward(60, 25, 10);
-  liftAuton(-2, 20, 5);
-  wait(1, sec);
+  moveForward(-90, 55, 10);
+  DriveToHeading(88, 25, 3);
   latchDown.set(1);
+  moveForward(-22, 20, 10);
 
-  //go to remove red from corner
-  moveForward(-10, 10, 10);
-  liftAuton(-120, 10, 10);   //push lift to the bottom
-  turnClockwise(-20, 20, 10); 
-  moveForward(100, 100, 10);
-  latchDown.set(0);
-  moveForward(-150, 10, 10);
-  turnClockwise(21, 20, 10);
-  liftAuton(240, 50, 5);
-  wait(1, sec);
+  //grab blue go other side
+  DriveToTargetXY(900, 1330, 25, 85);
+  //DriveToHeading(-10, 27, 3);
   moveForward(25, 20, 10);
-  liftAuton(-2, 20, 5);
   wait(1, sec);
+  latchDown.set(0);
+
+  //back to other side
+  DriveToTargetXY(930, -600, 32, 65);
+  wait(1, sec);
+  DriveToHeading(180, 25, 3); //turn
   latchDown.set(1);
+  moveForward(-10, 10, 10);
 
+  //middle
+  DriveToTargetXY(900, 0, 32, 65);
+  wait(1, sec);
+  DriveToHeading(259, 25, 3);
+  DriveToTargetXY(0, 0, 32, 65);
+  latchDown.set(0);
+  DriveToTargetXY(900, 0, 32, 65);
 }
-
 
 void aimatCornerGPS(){
     Brain.Screen.clearScreen();
@@ -74,12 +60,12 @@ void aimatCornerGPS(){
   DriveToTargetXY(570, 75, 32, 65);
   Drivetrain.stop();
   wait(1, sec);
-  DriveToHeading(93, 25, 3);      //95 degree 
+  DriveToHeading(91, 25, 3);      //93 almos work      
 
   liftAuton(240, 30, 5);
   wait(1, sec);
   moveForward(55, 25, 10);
-  liftAuton(-3, 10, 10);
+  //liftAuton(-3, 10, 10);
   //wait(1,sec);
   latchDown.set(1);
 
@@ -89,9 +75,9 @@ void aimatCornerGPS(){
   DriveToHeading(0, 25, 10);
 
   //go for blue 
-  DriveToTargetXY(860, 1260, 25, 85);
-  DriveToHeading(350, 27, 3);
-  moveForward(10, 20, 10);
+  DriveToTargetXY(900, 1330, 25, 85);
+  //DriveToHeading(-10, 27, 3);
+  moveForward(25, 20, 10);
   wait(1, sec);
   latchDown.set(0);
 
@@ -104,7 +90,7 @@ void aimatCornerGPS(){
   //middle
   DriveToTargetXY(900, 0, 32, 65);
   wait(1, sec);
-  DriveToHeading(275, 25, 3);
+  DriveToHeading(259, 25, 3);
   moveForward(60, 40, 10);
   latchDown.set(0);
   moveForward(-60, 40, 10);
