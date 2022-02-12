@@ -26,20 +26,19 @@
 using namespace vex;
 competition Competition;
 
-// //Without Menu
+// // //Without Menu
 // void userControl(){
 //   while(1){
-//     //arcadeDrive();
-//     tankDrive();
+//     arcadeDrive();
+//     //tankDrive();
 //     liftControl();
 //     liftToggle();
     
 //   }
 // }
 // void Autonomous(){
-//   aimatCorner();
+//   aimatCornerGPS();
 // }
-
 
 //---Menu---
 int tempStatus = 0;
@@ -48,6 +47,11 @@ void menuSetup(){
   notificationHUD("Robot: OK");
 }
 void Autonomous(){
+    Brain.Screen.setCursor(1, 1);
+    Brain.Screen.print("LiftL1 temp: %f\n", liftL1.temperature());
+    Brain.Screen.print("LiftL2 temp: %f\n", liftL2.temperature());
+    Brain.Screen.print("LiftR1 temp: %f\n", liftR1.temperature());
+    Brain.Screen.print("LiftR2 temp: %f\n", liftR2.temperature());
   if(getValues(AUTON_TYPE) == GOALSIDE){
     aimatCorner();
     printf("goal side auton");
@@ -76,7 +80,7 @@ void userControl(){
       liftControl();
     }
   }
-}
+
 void pre_auton (void){
   menuCONFIG();
   notificationHUD("Robot: OK");

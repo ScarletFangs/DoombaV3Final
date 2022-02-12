@@ -24,13 +24,13 @@ void tankDriveToggle(){
 
 void arcadeDrive(){
   if(abs(controller1.Axis3.value())>5||abs(controller1.Axis1.value())){
-<<<<<<< Updated upstream
+
     leftWheels.spin(reverse,controller1.Axis3.value()*1.55+controller1.Axis1.value()*0.5,pct);
     rightWheels.spin(fwd, controller1.Axis3.value()*1.55-controller1.Axis1.value()*0.5,pct);
-=======
+
     leftWheels.spin(fwd,controller1.Axis3.value()*1.55+controller1.Axis1.value()*0.48,pct);
     rightWheels.spin(fwd, controller1.Axis3.value()*1.55-controller1.Axis1.value()*0.48,pct);
->>>>>>> Stashed changes
+
   }else{
     leftWheels.stop(hold);
     rightWheels.stop(hold);

@@ -57,6 +57,12 @@ void aimatCorner(){
 
 
 void aimatCornerGPS(){
+    Brain.Screen.clearScreen();
+    Brain.Screen.setCursor(1, 1);
+    Brain.Screen.print("LiftL1 temp: %f/n", liftL1.temperature());
+    Brain.Screen.print("LiftL2 temp: %f/n", liftL2.temperature());
+    Brain.Screen.print("LiftR1 temp: %f/n", liftR1.temperature());
+    Brain.Screen.print("LiftR2 temp: %f/n", liftR2.temperature());
   liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
   moveForward(100, 100, 10); 
@@ -65,7 +71,7 @@ void aimatCornerGPS(){
   moveForward(-20, 55, 10);
 
   //gps to align to middle of ramp
-  DriveToTargetXY(570, 0, 32, 65);
+  DriveToTargetXY(570, 75, 32, 65);
   Drivetrain.stop();
   wait(1, sec);
   DriveToHeading(93, 25, 3);      //95 degree 
@@ -73,7 +79,8 @@ void aimatCornerGPS(){
   liftAuton(240, 30, 5);
   wait(1, sec);
   moveForward(55, 25, 10);
-  wait(1,sec);
+  liftAuton(-3, 10, 10);
+  //wait(1,sec);
   latchDown.set(1);
 
   moveForward(-25, 10, 10);
@@ -82,7 +89,9 @@ void aimatCornerGPS(){
   DriveToHeading(0, 25, 10);
 
   //go for blue 
-  DriveToTargetXY(1020, 1290, 32, 65);
+  DriveToTargetXY(860, 1260, 25, 85);
+  DriveToHeading(350, 27, 3);
+  moveForward(10, 20, 10);
   wait(1, sec);
   latchDown.set(0);
 
@@ -95,8 +104,10 @@ void aimatCornerGPS(){
   //middle
   DriveToTargetXY(900, 0, 32, 65);
   wait(1, sec);
-  DriveToHeading(270, 25, 3);
-
+  DriveToHeading(275, 25, 3);
+  moveForward(60, 40, 10);
+  latchDown.set(0);
+  moveForward(-60, 40, 10);
 }
 
 

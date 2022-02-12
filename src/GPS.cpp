@@ -6,8 +6,8 @@
 
 #define GPS_DISTANCE_THRESHOLD 20
 #define GPS_DEGREE_THRESHOLD 2
-#define GPS_HEADING_DEBUG true
-#define GPS_DEBUG true
+#define GPS_HEADING_DEBUG false
+#define GPS_DEBUG false
 #define KP 0.2
 std::ofstream myFile;
 
