@@ -9,5 +9,6 @@ void safeGoalSide();
 
 void rampSide();
 
+void middlePriority();
 
 #endif

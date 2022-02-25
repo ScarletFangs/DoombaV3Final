@@ -113,3 +113,22 @@ void rampSide(){
 }
 
 
+void middlePriority()
+{
+  liftAuton(0, 10, 10);     //push lift to bottom
+  latchDown.set(1);           //open
+  moveForward(50,50,10);
+  DriveToTargetXY(-310, -10, 32, 65);
+  latchDown.set(0);
+  wait(1, sec);
+  DriveToHeading(259, 25, 3);
+  //DriveToTargetXY(0, 0, 32, 65);
+  latchDown.set(0);
+  DriveToTargetXY(-900, 0, 32, 65);
+  moveForward(-30,50,10);
+  DriveToHeading(259, 25, 3);
+  DriveToTargetXY(-310, -10, 32, 65);
+
+
+
+}
