@@ -26,85 +26,90 @@
 using namespace vex;
 competition Competition;
 
-// // //Without Menu
-void userControl(){
-  while(1){
-    arcadeDrive();
-    //tankDrive();
-    liftControl();
-    liftToggle();
+// //Without Menu
+// void userControl(){
+//   while(1){
+//     arcadeDrive();
+//     //tankDrive();
+//     liftControl();
+//     liftToggle();
     
-  }
-}
-void Autonomous(){
-  //BlueSafeGoalSide();   //Blue is slot 2
-  //RedSafeGoalSide();    // Red is slot 1
-  //middlePriority();
-  //bluemiddlePriority();
-  score130points();
-  
-}
-
-//---Menu---
-// int tempStatus = 0;
-// void menuSetup(){
-//   menuCONFIG();
-//   notificationHUD("Robot: OK");
+//   }
 // }
 // void Autonomous(){
-//     Brain.Screen.setCursor(1, 1);
-//     Brain.Screen.print("LiftL1 temp: %f\n", liftL1.temperature());
-//     Brain.Screen.print("LiftL2 temp: %f\n", liftL2.temperature());
-//     Brain.Screen.print("LiftR1 temp: %f\n", liftR1.temperature());
-//     Brain.Screen.print("LiftR2 temp: %f\n", liftR2.temperature());
-//   if(getValues(AUTON_TYPE) == GOALSIDE){
-//     safeGoalSide();
-//     printf("goal side auton");
-//   }else if(getValues(AUTON_TYPE) == RAMPSIDE){
-//     //rampSide();
-//     aimatCornerGPS();
-//     printf("ramp side auton");
-//   }else if(getValues(AUTON_TYPE) == SKILLS){
-//     score130points();
-//     printf("skills");
-//   }else{
-//     Brain.Screen.setCursor(10, 10);
-//     Brain.Screen.print("Auton not selected");
-//     notificationHUD("Auton not selected");
-//   }
-//   notificationHUD("Auton: Done");
+//   //BlueSafeGoalSide();   //Blue is slot 2
+//   //RedSafeGoalSide();    // Red is slot 1
+//   //middlePriority();
+//   //bluemiddlePriority();
+//   score130points();
+  
 // }
-// void userControl(){
-//     if(getValues(AUTON_DRIVE) == ARCADE){
-//       arcadeDrive();
-//       liftToggle();
-//       liftControl();
-//     }else if(getValues(AUTON_DRIVE) == TANK){
-//       tankDrive();
-//       liftToggle();
-//       liftControl();
-//     }
-//   }
 
-// void pre_auton (void){
-//   menuCONFIG();
-//   notificationHUD("Robot: OK");
-// }
+//---Menu---
+int tempStatus = 0;
+void menuSetup(){
+  menuCONFIG();
+  notificationHUD("Robot: OK");
+}
+void Autonomous(){
+  if(getValues(AUTON_COLOR)== BLUE){
+    if(getValues(AUTON_TYPE) == GOALSIDE){
+      //Blue goalside
+      BlueSafeGoalSide();
+    }else if(getValues(AUTON_TYPE) == MIDDLE){
+      //Blue middle goal (usc)
+      bluemiddlePriority();
+    }else if(getValues(AUTON_TYPE) == SKILLS){
+      score130points();
+      printf("skills");
+    }
+  }else if(getValues(AUTON_COLOR)==RED){
+      if(getValues(AUTON_TYPE) == GOALSIDE){
+      //Red goalside
+      RedSafeGoalSide();
+    }else if(getValues(AUTON_TYPE) == MIDDLE){
+      //Red middle goal (usc)
+      redmiddlePriority();
+    }else if(getValues(AUTON_TYPE) == SKILLS){
+      //skills
+      score130points();
+    }
+  }
+  notificationHUD("Auton: Done");
+}
+void userControl(){
+  while(1){
+      if(getValues(AUTON_DRIVE) == ARCADE){
+        arcadeDrive();
+        liftToggle();
+        liftControl();
+      }else if(getValues(AUTON_DRIVE) == TANK){
+        tankDrive();
+        liftToggle();
+        liftControl();
+      }
+    }
+  }
+
+void pre_auton (void){
+  menuCONFIG();
+  notificationHUD("Robot: OK");
+}
 
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  //pre_auton();
+  pre_auton();
 
   Competition.drivercontrol(userControl);
   Competition.autonomous(Autonomous);
 
-  // while(1){
-  //   if(tempStatus != currStatus()){
-  //     statusHUD();
-  //     tempStatus = currStatus();
-  //   }
-  // }
+  while(1){
+    if(tempStatus != currStatus()){
+      statusHUD();
+      tempStatus = currStatus();
+    }
+  }
   
 }

@@ -46,7 +46,7 @@ using namespace vex;
 #define BLUE		    		0
 #define RED				    	1
 #define GOALSIDE				0
-#define RAMPSIDE			  1
+#define MIDDLE  			  1
 #define SKILLS		      2
 #define ARCADE			    0
 #define TANK				    1
