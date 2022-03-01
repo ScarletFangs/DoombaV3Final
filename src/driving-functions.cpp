@@ -32,8 +32,8 @@ void arcadeDrive(){
     rightWheels.spin(fwd, controller1.Axis3.value()*1.55-controller1.Axis1.value()*0.48,pct);
 
   }else{
-    leftWheels.stop(hold);
-    rightWheels.stop(hold);
+    leftWheels.stop(coast);
+    rightWheels.stop(coast);
   }
 }
 

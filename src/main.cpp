@@ -37,8 +37,12 @@ void userControl(){
   }
 }
 void Autonomous(){
-  //safeGoalSide();
-  middlePriority();
+  //BlueSafeGoalSide();   //Blue is slot 2
+  //RedSafeGoalSide();    // Red is slot 1
+  //middlePriority();
+  //bluemiddlePriority();
+  score130points();
+  
 }
 
 //---Menu---

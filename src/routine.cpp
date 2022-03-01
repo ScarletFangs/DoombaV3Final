@@ -8,7 +8,8 @@
 using namespace vex;
 using namespace std;
 
-void safeGoalSide(){
+//Blue is slot 2
+void BlueSafeGoalSide(){
   liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
   moveForward(100, 100, 10); 
@@ -40,6 +41,41 @@ void safeGoalSide(){
   DriveToTargetXY(0, 0, 32, 65);
   latchDown.set(0);
   DriveToTargetXY(900, 0, 32, 65);
+}
+
+//Red is slot 1
+void RedSafeGoalSide(){
+  liftAuton(0, 10, 10);     //push lift to bottom
+  latchDown.set(1);           //open
+  moveForward(100, 100, 10); 
+  latchDown.set(0);
+  liftAuton(0.5, 10, 10);
+  moveForward(-90, 55, 10);
+  DriveToHeading(268, 25, 3);
+  latchDown.set(1);
+  moveForward(-22, 20, 10);
+
+  //grab blue go other side
+  DriveToTargetXY(-900, -1330, 25, 85);
+  //DriveToHeading(-10, 27, 3);
+  moveForward(25, 20, 10);
+  wait(1, sec);
+  latchDown.set(0);
+
+  //back to other side
+  // DriveToTargetXY(-930, 600, 32, 65);
+  // wait(1, sec);
+  // DriveToHeading(0, 25, 3); //turn
+  // latchDown.set(1);
+  // moveForward(-10, 10, 10);
+
+  // //middle
+  // DriveToTargetXY(-900, 0, 32, 65);
+  // wait(1, sec);
+  // DriveToHeading(79, 25, 3);
+  // DriveToTargetXY(0, 0, 32, 65);
+  // latchDown.set(0);
+  // DriveToTargetXY(-900, 0, 32, 65);
 }
 
 void aimatCornerGPS(){
@@ -113,21 +149,40 @@ void rampSide(){
 }
 
 
-void middlePriority()
+void redmiddlePriority()
 {
   liftAuton(0, 10, 10);     //push lift to bottom
   latchDown.set(1);           //open
-  moveForward(50,50,10);
-  DriveToTargetXY(-310, -10, 32, 65);
+  moveForward(125,100,10);
   latchDown.set(0);
-  wait(1, sec);
-  DriveToHeading(259, 25, 3);
-  //DriveToTargetXY(0, 0, 32, 65);
+  moveForward(-30, 100, 10);
+  DriveToTargetXY(-1000, -1200, 32, 65);
+  liftAuton(240, 30, 5);
+  latchDown.set(1);
+  moveForward(15, 80, 10);
+  liftAuton(-220, 50, 10);
+  // moveForward(-30,50,10);
+  // DriveToHeading(259, 25, 3);
+  // DriveToTargetXY(-310, -10, 32, 65);
+
+
+
+}
+void bluemiddlePriority()
+{
+  liftAuton(0, 10, 5);     //push lift to bottom
+  latchDown.set(1);           //open
+  moveForward(125, 100, 100);
   latchDown.set(0);
-  DriveToTargetXY(-900, 0, 32, 65);
-  moveForward(-30,50,10);
-  DriveToHeading(259, 25, 3);
-  DriveToTargetXY(-310, -10, 32, 65);
+  moveForward(-30, 100, 10);
+  DriveToTargetXY(1000, -1200, 32, 65);
+  liftAuton(240, 30, 5);
+  latchDown.set(1);
+  moveForward(15, 80, 10);
+  liftAuton(-220, 50, 10);
+  //moveForward(-80, 100, 10);
+  //turnClockwise(40, 20, 10);
+  //DriveToTargetXY(-310, -10, 32, 65);
 
 
 

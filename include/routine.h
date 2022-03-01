@@ -5,10 +5,14 @@
 //Routines-----------------
 void aimatCornerGPS();
 
-void safeGoalSide();
+void BlueSafeGoalSide();
 
 void rampSide();
 
-void middlePriority();
+void redmiddlePriority();
+
+void bluemiddlePriority();
+
+void RedSafeGoalSide();
 
 #endif
