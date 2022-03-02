@@ -63,19 +63,19 @@ void RedSafeGoalSide(){
   latchDown.set(0);
 
   //back to other side
-  // DriveToTargetXY(-930, 600, 32, 65);
-  // wait(1, sec);
-  // DriveToHeading(0, 25, 3); //turn
-  // latchDown.set(1);
-  // moveForward(-10, 10, 10);
+  DriveToTargetXY(-930, 600, 32, 65);
+  wait(1, sec);
+  DriveToHeading(0, 25, 3); //turn
+  latchDown.set(1);
+  moveForward(-10, 10, 10);
 
-  // //middle
-  // DriveToTargetXY(-900, 0, 32, 65);
-  // wait(1, sec);
-  // DriveToHeading(79, 25, 3);
-  // DriveToTargetXY(0, 0, 32, 65);
-  // latchDown.set(0);
-  // DriveToTargetXY(-900, 0, 32, 65);
+  //middle
+  DriveToTargetXY(-900, 0, 32, 65);
+  wait(1, sec);
+  DriveToHeading(79, 25, 3);
+  DriveToTargetXY(0, 0, 32, 65);
+  latchDown.set(0);
+  DriveToTargetXY(-900, 0, 32, 65);
 }
 
 void aimatCornerGPS(){
